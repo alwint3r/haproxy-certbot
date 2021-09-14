@@ -1,8 +1,8 @@
-FROM alpine:3.6
+FROM alpine:3.14
 
-ENV HAPROXY_MAJOR 1.7
-ENV HAPROXY_VERSION 1.7.9
-ENV HAPROXY_MD5 a2bbbdd45ffe18d99cdcf26aa992f92d
+ENV HAPROXY_MAJOR 2.4
+ENV HAPROXY_VERSION 2.4.4
+ENV HAPROXY_MD5 19cd1f31f0e45b72f19d070fa25517b0
 
 RUN set -x \
   \
@@ -25,7 +25,7 @@ RUN set -x \
   && rm haproxy.tar.gz \
   \
   && makeOpts=' \
-    TARGET=linux2628 \
+    TARGET=linux-musl \
     USE_OPENSSL=1 \
     USE_PCRE=1 PCREDIR= \
     USE_ZLIB=1 \
